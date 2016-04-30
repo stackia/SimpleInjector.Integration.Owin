@@ -31,6 +31,9 @@ container.Register<IMyService, MyService>(Lifestyle.Scoped);
 
 ## Difference with the official way (Execution Context Scope)...
 
-[The official integration guide](http://simpleinjector.readthedocs.io/en/latest/owinintegration.html) recommends using execution context scope. Well, it seems no problem but when you host your OWIN application on IIS (use Microsoft.Owin.Host.SystemWeb), you'll find sometimes your execution context scope disappears and new service instances are created. See this SO question:
+[The official integration guide](http://simpleinjector.readthedocs.io/en/latest/owinintegration.html) recommends using execution context scope. Well, it seems no problem but when you host your OWIN application on IIS (use Microsoft.Owin.Host.SystemWeb), you'll find sometimes your execution context scope disappears and new service instances are created.
+
+See this SO question:
 http://stackoverflow.com/questions/29194836/passing-logical-call-context-from-owin-pipeline-to-webapi-controller
-This library try using CallContext to retrive OwinContext, if fails then use HttpContext.Current. So it can properly handle this problem when you host your app on IIS.
+
+This library try using CallContext to retrive OwinContext, if fails then use HttpContext.Current. So it can properly handle such problem when you host your app on IIS.
