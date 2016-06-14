@@ -2,6 +2,14 @@
 
 The Simple Injector OWIN Integration package adds a lifestyle to the Simple Injector called 'Per OWIN Request', which allows instances to live within a single OWIN request and get disposed when the request ends.
 
+## Download
+
+Install package using [NuGet](https://www.nuget.org/packages/SimpleInjector.Integration.Owin/) in your [Package Manager Console](https://docs.nuget.org/consume/package-manager-console):
+
+```powershell
+PM> Install-Package SimpleInjector.Integration.Owin
+```
+
 ## How to use
 
 In your OWIN Startup class, register this middleware as early as possible:
